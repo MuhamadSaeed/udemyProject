@@ -1,0 +1,81 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+.mostSearch {
+    padding: 60px 30px;
+    margin-top: 20px;
+    background: $gray;
+    .name {
+        @include name;
+        margin-bottom: 30px;
+    }
+    .cont {
+        @include flex(initial, space-between, 40px, initial);
+        flex-wrap: wrap;
+            .content {
+                width: (100% / 4);
+                h2 {
+                    font-size: 18px;
+                    margin-bottom: 30px;
+                }
+                .link {
+                    margin-bottom: 25px;
+                    a {
+                        display: block;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                        color: #5624d0;
+                        &:hover {
+                            color: #402091;
+                        }
+                    }
+                    small {
+                        opacity: .7;
+                    }
+                }
+            }
+    }
+    .btn {
+        button {
+            @include button;
+            &:hover {
+                background-color: $grayDark;
+            }
+        }
+    }
+}
+.topCate {
+    padding: 15px 30px;
+    .name {
+        @include name;
+        margin-bottom: 35px;
+    }
+    .cont {
+        flex-wrap: wrap;
+        @include flex(initial, center, 10px, initial);
+    }
+    .box {
+        margin-bottom: 20px;
+        img {
+            cursor: pointer;
+            transition: .3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        h4 {
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .mostSearch{
+        .cont {
+            flex-direction: column;
+            justify-content: center;
+            .content {
+                width: 100%;
+            }
+        }
+    }
+}

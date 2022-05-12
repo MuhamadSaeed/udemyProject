@@ -1,0 +1,36 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+.landing {
+    .mainPhoto {
+        width: -webkit-fill-available;
+    }
+    .info {
+        position: absolute;
+        margin: 50px 0 0 50px;
+        width: fit-content;
+        max-width: 40%;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+        padding: 2.4rem;
+        background-color: #FFF;
+        h2 {
+            @include name;
+            margin-bottom: 10px;
+        }
+    }
+}
+.secinfo {
+    padding: 15px 0 0 30px;
+    display: none;
+    h2 {
+        margin-bottom: 15px;
+        opacity: .8;
+    }
+}
+@media (max-width: 991px) {
+    .landing .info {
+        display: none;
+    }
+    .secinfo {
+        display: block;
+    }
+}

@@ -1,0 +1,95 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+nav {
+    h4 {
+        font-weight: 400;
+        font-size: 14px;
+        &:hover {
+            color: $linkColor;
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+    padding: 15px 30px;
+    @include flex(center, space-between, 10px, initial);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    .logo img {
+        width: 90px;
+    }
+    .search {
+        border: 1px solid black;
+        padding: 15px 20px;
+        position: relative;
+        border-radius: 100px;
+        width: 33%;
+        background-color: $gray;
+        i {
+            position: absolute;
+            color: gray;
+            left: 10px;
+            top: 15px;
+        }
+        input {
+            all: unset;
+            padding: 0 15px;
+            &::placeholder {
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+    }
+    .info {
+        display: inherit;
+        h4:not(:last-child){
+            padding-right: 10px;
+        }
+    } 
+    .btns {
+        display: inherit;
+        align-items: center;
+        gap: 15px;
+        i {
+            cursor: pointer;
+            &:hover {
+                color: $linkColor;
+            }
+        }
+        button {
+            @include button;
+            &:not(:nth-of-type(2)):hover {
+                background-color: $gray;
+            }
+            &:nth-of-type(2) {
+                background-color: #000;
+                color: #FFF;
+            }
+        }
+    }
+}
+@media (min-width: 991px) {
+    nav {
+        .cart-ser, .toggle {
+            display: none;
+        }
+    }
+}
+@media (max-width: 991px) {
+    nav {
+        .cat, .info, .search, .nav-btns {
+            display: none;
+        }
+        .btns {
+            .nav-btns {
+                display: none;
+            }
+        }
+        .cart-ser {
+            padding-right: 12px;
+            opacity: .8;
+        }
+        .toggle {
+            cursor: pointer;
+        }
+    }
+}

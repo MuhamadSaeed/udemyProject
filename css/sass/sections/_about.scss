@@ -1,0 +1,83 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+.about {
+    padding: 50px 0;
+    .udemyBusiness {
+        margin-bottom: 50px;
+    }
+    .becomeAnInstructor, .udemyBusiness {
+        @include flex(center, center, 70px, initial);
+        .info {
+            width: 33%;
+            h2 {
+                @include name;
+                margin-bottom: 15px;
+            }
+            p {
+                line-height: 1.5;
+                font-weight: 500;
+                margin-bottom: 20px;
+                opacity: .7;
+            }
+            button {
+                @include button;
+                &:hover {
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+            .udemy-business-photo {
+                width: 250px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .companys {
+        padding: 30px;
+        background-color: $gray;
+        margin: 50px 0;
+        .cont {
+            text-align: center;
+            h2 {
+                @include name;
+                margin-bottom: 20px;
+            }
+            .imgs {
+                @include flex(center, center, 15px, initial);
+                img {
+                    width: 60px;
+                    height: auto;
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .about {
+        .becomeAnInstructor {
+            flex-direction: column;
+        }
+        .udemyBusiness {
+            flex-direction: column-reverse;
+        }
+        .idontknow {
+            flex-direction: column;
+        }
+        .info {
+            width: 50% !important;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .about {
+        .info {
+            width: 85% !important;
+            text-align: center;
+        }
+        img {
+            width: 350px;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+.boxs {
+    .arrow-l {
+        @include arrow(22px, initial);
+        display: none;
+    }
+    .arrow {
+        @include arrow(initial, 22px)
+    }
+    @include flex(initial, center, 2%, initial);
+    position: relative;
+    transition: .7s;
+    .box {
+        width: (100% / 4);
+        transition: 1s;
+        img {
+            height: 150px;
+            width: 100%;
+        }
+    }
+    .info {
+        h2 {
+            font-size: 18px;
+        }
+        p {
+            padding: 5px 0;
+            opacity: .8;
+            font-size: 13px;
+        }
+        div {
+            @include flex(center, initial, 10px, initial);
+            .num {
+                color: $orange;
+                font-weight: 800;
+            }
+            .stars {
+                gap: 0;
+                color: $orange;
+                font-size: 12px;
+            }
+        }
+        .salary {
+            font-weight: 700;
+            margin-top: 8px;
+            span {
+                font-weight: 500;
+                text-decoration: line-through;
+                opacity: .5;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .content {
+        .box4 {
+            display: none;
+        }
+        .box {
+            width: (100% / 3);
+        }
+    }
+}
+@media (max-width: 767px) {
+    .content {
+        .box3 {
+            display: none;
+        }
+        .box {
+            width: (100% / 2) !important;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .content {
+        .box2 {
+            display: none;
+        }
+        .box {
+            width: (100% / 1) !important;
+        }
+    }
+    section:nth-child(6) > div > div > div.content > div.info > p {
+        font-size: 14px;
+    }
+}

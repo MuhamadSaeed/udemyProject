@@ -1,0 +1,60 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+footer {
+    background: #1c1d1f;
+    padding: 30px;
+    .cont {
+        .top {
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            li {
+                list-style: none;
+                &:not(:last-child) {
+                    padding-bottom: 10px;
+                }
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-size: 14px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        button{
+            @include button;
+            color: #fff;
+            border-color: #fff;
+            i {
+                padding-right: 6px;
+            }
+            &:hover {
+                background-color: #333;
+            }
+        }
+        .bottom {
+            color: white;
+        }
+    }
+}
+@media (max-width: 767px) {
+    footer {
+        .top {
+            flex-wrap: wrap;
+            gap: 20px;
+            button {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    footer {
+        .top {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

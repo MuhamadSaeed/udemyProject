@@ -1,0 +1,31 @@
+@mixin button {
+    all: unset;
+    border: 1px solid #000;
+    padding: 8px 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+@mixin flex($align-items, $justify-content, $gap, $flex-direction) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+    flex-direction: $flex-direction;
+}
+@mixin name {
+    font-size: 24px;
+    opacity: .8;
+    font-weight: 700;
+}
+@mixin arrow($left, $right) {
+    position: absolute;
+    left: $left;
+    right: $right;
+    top: 65px;
+    color: white;
+    background: black;
+    padding: 15px;
+    border-radius: 50%;
+    border: $gray solid 1px;
+    cursor: pointer;
+}

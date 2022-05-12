@@ -1,0 +1,138 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+aside {
+    position: absolute;
+    top: 0;
+    background: #FFF;
+    width: 270px;
+    z-index: 1;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: -270px;
+    transition: .5s;
+    hr {
+        margin-top: 25px;
+    }
+    .close {
+        position: absolute;
+        right: 25px;
+        width: 30px;
+        height: 30px;
+        background: #0000003d;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-top: 15px;
+        z-index: 8;
+        &:hover {
+            box-shadow: 0 0 5px #0000003d;    
+        }
+        i {
+            cursor: pointer;
+        }
+    }
+    .top {
+        position: relative;
+        padding: 15px 15px 0 15px;
+        h4 {
+            font-weight: 400;
+            font-size: 16px;
+            color: $linkColor;
+            &:not(:last-child) {
+                padding-bottom: 15px;
+            }
+        }
+    }
+    .mid {
+        padding: 15px 0 0 15px;
+        position: relative;
+        .name {
+            font-size: 15px;
+            font-weight: 800;
+            opacity: .7;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+        }
+        .boxs {
+            @include flex(initial, initial, 20px, column);
+            .box {
+                width: 100%;
+                .content {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding-right: 12px;
+                    opacity: .7;
+                    cursor: pointer;
+                    h4 {
+                        font-weight: 500;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        padding: 20px 15px 15px;
+        .name {
+            font-size: 15px;
+            font-weight: 800;
+            opacity: .7;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+        }
+        .content {
+            h4 {
+                font-weight: 500;
+                text-transform: capitalize;
+                opacity: .8;
+                padding-bottom: 20px;
+            }
+        }
+        button{
+            @include button;
+            i {
+                padding-right: 6px;
+            }
+            &:hover {
+                background-color: #000;
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+    }
+}
+aside {
+    .choises {
+        background: #FFF;
+        height: auto;
+        position: absolute;
+        left: 250px;
+        width: 253px;
+        transition: .5s;
+        width: 270px;
+        top: -35px;
+        .top {
+            display: flex;
+            cursor: pointer;
+            span {
+                padding-left: 10px;
+            }
+            h4 {
+                padding-left: 20px;
+                color: #333;
+            }
+        }
+        .content {
+            @include flex(initial, initial, 25px, column);
+            margin-top: 50px;
+            padding-left: 15px;
+        }
+    }
+}
+.left-15 {
+    left: -15px !important;
+}
